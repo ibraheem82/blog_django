@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<style>
+
+</style>
+<div class="container">
+
+    <!-- ( enctype ) is always needed for image uploadings -->
+    <h1><span>Are you sure that you wan to delete this Article?</span></h1>
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{form.as_p}}
+
+
+
+
+
+
+
+        <input type="submit" class="btn btn-danger" value="Delete">
+    </form>
+</div>
+
+<script>
+
+
+    let inputFields = document.getElementsByTagName('input')
+    let bodyField = document.getElementById('id_body')
+    let selectField = document.getElementById('id_category')
+
+
+
+    for (let i = 0; i < inputFields.length; i++) {
+        inputFields[i].classList.add('form-control')
+    }
+
+
+    bodyField.classList.add('form-control')
+    selectField.classList.add('form-select')
+
+
+
+</script>
+{% endblock content %}

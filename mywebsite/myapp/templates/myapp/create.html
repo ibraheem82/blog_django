@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+{% comment %} <style>
+
+</style> {% endcomment %}
+<div class="container">
+
+    <!-- ( enctype ) is always needed for image uploadings -->
+    <h1><span>Create An Article</span></h1>
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        
+        {{form.as_p}}
+        {{form.media}}
+
+
+        <input type="submit" class="btn btn-primary" value="Create">
+    </form>
+</div>
+
+<script>
+
+
+    let inputFields = document.getElementsByTagName('input');
+    let bodyField = document.getElementById('id_body');
+    let selectField = document.getElementById('id_category');
+
+
+
+    for (let i = 0; i < inputFields.length; i++) {
+        inputFields[i].classList.add('form-control')
+    }
+
+
+    
+    bodyField.classList.add('form-control');
+    selectField.classList.add('form-select');
+
+</script>
+{% endblock content %}

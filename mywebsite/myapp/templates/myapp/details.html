@@ -1,0 +1,316 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+	<!-- services area start -->
+	<div class="blogs blog-single">
+		<div class="container">
+			<div class="blog-wrapper">
+				<div class="row">
+					<div class="col-lg-9 col-12 pr-lg-20">
+						<div class="widget-member">
+							<span>
+							<div class="member-thumb">
+								{% if post_detail.writer.picture %}
+								<img src=" {{post_detail.writer.picture.url}} " style = "width:10%;  height:7%;" alt="blog-image">
+								{% else %}
+								<img src="" alt="blog-imge">
+								{% endif %}
+							</div>
+							<div class="member-text">
+								<a href="{% url 'profile' post_detail.writer.profile_id %}"><h5>{{post_detail.writer.name}}</h5></a>
+								<p>
+									Authoritatively restore orthog
+									ips ineer installed Intrinsiclyts
+									imperatives.
+								</p>
+								<ul class="team-icon">
+									<li>
+								<a href="#!" class="badge bg-secondary text-decoration-none text-white link-right">{{post_detail.category}}</a>
+									</li>
+									<li>
+										<a href="#">
+											<i class="fab fa-behance"></i>
+										</a>
+									</li>
+									
+								</ul>
+							</div>
+						</div>
+						<div class="blog-post">
+							<div class="blog-thumb">
+								<img src="{{post_detail.image.url}} " style="width:80%" height="50%"   alt="Blog - Image">
+								<div class="date">
+									<h6>25</h6>
+									<span>Aug</span>
+								</div>
+							</div>
+							<div class="blog-text">
+								<h3>{{post_detail.title}}</h3>
+								<ul class="post-date">
+									<li><span>{{post_detail.created_at}} By Admin </span></li>
+									<li><span>15 likes    5 Comments</span></li>
+								</ul>
+								<p class="text-1">
+									{{post_detail.body}}	
+								</p>
+							
+								<ul class="more-art">
+									<li>
+										<span>Tags: <a href="#">Travel,</a><a href="#">Photography,</a><a href="#">Lyfestyle</a></span>
+									</li>
+
+
+									{% comment %} <li>
+								<a href=' {% url 'update' slug=post_detail.slug %}'>
+									<button class="btn btn-primary">Update</button>
+								</a>
+
+
+									<a href=' {% url 'delete' slug=post_detail.slug %}'>
+									<button class="btn btn-danger">Delete</button>
+									</a>
+
+											
+									
+									</li> {% endcomment %}
+								</ul>
+							</div>
+						</div>
+						<div class="personal-blog">
+							
+						</div>
+						<div class="related-post">
+							<h5>Related Post</h5>
+							<div class="post-thumb">
+								<div class="thumb-item">
+									<div class="item-inner">
+										<img src=" {% static 'assets/images/blog/02.jpg' %} " alt="blog-image">
+										<div class="inner-text">
+											<a href="#"><h6>Archaeologists may tunnel</h6></a>
+											<p>January 26, 2020</p>
+										</div>
+									</div>
+								</div>
+								<div class="thumb-item">
+									<div class="item-inner">
+										<img src=" {% static 'assets/images/blog/03.jpg' %} " alt="blog-image">
+										<div class="inner-text">
+											<a href="#"><h6>Hedden tunnel In king tut’s</h6></a>
+											<p>January 26, 2020</p>
+										</div>
+									</div>
+								</div>
+								<div class="thumb-item">
+									<div class="item-inner">
+										<img src=" {% static 'assets/images/blog/04.jpg' %} " alt="blog-image">
+										<div class="inner-text">
+											<a href="#"><h6>How to travel In the world lucx</h6></a>
+											<p>January 26, 2020</p>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="blog-comment">
+							<div class="comment-contents">
+								<h5>03 Comment</h5>
+								<ul>
+									<li class="c-list">
+										<div class="c-image">
+											<img src=" {% static 'assets/images/blog/13.png' %} " alt="Blog-image">
+										</div>
+										<div class="c-content">	
+											<h6>Maria Wilson  <span> - 03 Days Ago At 11:30pm</span></h6>
+											<p>
+												Authoritatively strategize inexpensive relationships after cutting-edge innovation china to hear farcat travel in  
+												without equity invested systems.dorldwisuply Chains after.
+												<span>Reply</span>
+											</p>
+										</div>
+										
+										<ul class="replay-list">
+											<li class="c-list">
+												<div class="c-image">
+													<img src=" {% static 'assets/images/blog/14.png' %} " alt="Blog-image">
+												</div>
+												<div class="c-content">	
+													<h6>John Smith <span>- 03 Days Ago At 11:30pm</span></h6>
+													<p>
+														Authoritatively strategize inexpensive relationships after cutting-edge proactively unleash para farcat Travel  
+														Proactively unleash parallel  dorldwisuply Chains after.
+														<span>Reply</span>
+													</p>
+												</div>
+											</li>
+										</ul>
+									</li>
+									<li class="c-list">
+										<div class="c-image">
+											<img src=" {% static 'assets/images/blog/15.png' %} " alt="Blog-image">
+										</div>
+										<div class="c-content">	
+											<h6>Maria Smith  <span> - 03 Days Ago At 11:30pm</span></h6>
+											<p>
+												Authoritatively strategize inexpensive relationships after proactively unleash parallel after innovation farcat  in  
+												dorldwisuply Chains afterp roactively unleash parallel.
+												<span>Reply</span>
+											</p>
+										</div>
+									</li>
+								</ul>
+							</div>
+						</div>
+						<div id="respond" class="comment-respond">
+							<div class="add-comment">
+								<h5 class="title-border">Leave a Comment</h5>
+								<form action="#" method="post" id="commentform" class="comment-form">
+									<input name="name" type="text" value="" placeholder="Name*">
+									<input name="email" type="text" value="" placeholder="Email*">
+									<input name="url" type="text" value="" placeholder="website*">
+									<textarea id="comment-reply" name="comment" rows="5" placeholder="Message*"></textarea>
+									<button type="submit" class="btn"><span>Submit Now</span><i class="icofont-double-right"></i></button>
+								</form>
+							</div>			
+						</div>
+					</div>
+					  <div class="col-lg-3 col-12">
+						<!-- <div class="widget-member">
+							<div class="member-thumb">
+								<img src=" {% static 'assets/images/blog/04.png' %} " alt="blog-imge">
+							</div>
+							<div class="member-text">
+								<a href="#"><h5>Sahjahan Sagor</h5></a>
+								<p>
+									Authoritatively restore orthog
+									ips ineer installed Intrinsiclyts
+									imperatives.
+								</p>
+								<ul class="team-icon">
+									<li>
+										<a href="#">
+											<i class="fab fa-twitter"></i>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<i class="fab fa-behance"></i>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<i class="fab fa-instagram"></i>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<i class="fab fa-vimeo-v"></i>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<i class="fab fa-linkedin-in"></i>
+										</a>
+									</li>
+								</ul>
+							</div>
+						</div> -->
+						<div class="Post-Categories">
+							<h5>Post  Categories</h5>
+							<ul class="categories">
+                                <li>
+                                    <a href="#">
+                                        <p>
+											Show all
+                                        </p>
+                                        <span>(50)</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <p>
+											Business
+                                        </p>
+                                        <span>(20)</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <p>
+                                        	Creative
+                                        </p>
+                                        <span>(25)</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <p>
+                                        	Inspiation
+                                        </p>
+                                        <span>(28)</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <p>
+                                        	News
+                                        </p>
+                                        <span>(28)</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <p>
+                                        	Photography
+                                        </p>
+                                        <span>(20)</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <p>
+											Smart
+                                        </p>
+                                        <span>(25)</span>
+                                    </a>
+								</lint
+                            </ul>
+						</div>
+						<div class="recent-post">
+							<div class="post-content">
+								<h5>Recent Post</h5>
+								{% for recent_post in recent_post_detail %}
+								
+								<div class="content-inner" >
+									<div class="post-thumb">
+										<img src="{{recent_post.image.url}}"   class="img-thumbnail"  alt="Blog-image">
+									</div>
+									<div class="post-text">
+										<a href="{% url 'detail' recent_post.slug %}">
+											{{recent_post.title}}
+										</a>
+										<br>
+										<p>{{recent_post.body|truncatechars:100}}</p>
+										<span>January 26, 2020</span>
+									</div>
+								</div>
+								{% endfor %}
+
+
+
+
+							 
+							
+							</div>
+						</div>
+						<div class="widget-tag">
+						
+					</div> 
+				</div> 
+			</div>
+		</div>
+	</div>
+	<!-- sercices area ends -->
+    {% endblock %}

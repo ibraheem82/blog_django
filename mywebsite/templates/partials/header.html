@@ -1,0 +1,175 @@
+ {% load static %}
+    <!-- search area -->
+	<div class="search-area">
+		<div class="search-input">
+			<div class="search-close">
+				<i class="fas fa-times"></i>
+			</div>
+			<form>
+				<input type="text" name="text" placeholder="Search Heare">
+				<button class="search-btn">
+					<span class="serch-icon">
+						<i class="fas fa-search"></i>
+					</span>
+				</button>
+			</form>
+		</div>
+	</div>
+	<!-- search area -->
+
+	<!-- mobile menu area start -->
+	<div class="mobile-menu">
+		<nav class="mobile-header primary-menu d-lg-none">
+			<div class="header-logo">
+				<a href="{% url 'home' %}" class="logo style-1">
+					<img src="  {% static 'assets/images/logo/logo.png' %}  " alt="logo">
+				</a>
+			</div>
+			<div class="header-bar">
+				<span></span>
+				<span></span>
+				<span></span>
+			</div> 
+		</nav>
+		<nav class="menu">
+			<div class="mobile-menu-area d-lg-none">
+				<div class="mobile-menu-area-inner" id="scrollbar">
+					<div class="mobile-search">
+						<div class="search-inner">
+							<input type="text" placeholder="Search Here......"/>
+							<button type="submit">
+								<span>
+									<i class="fas fa-search"></i>
+								</span>
+							</button>
+						</div>
+					</div>
+					<ul class="m-menu">
+						<li>
+							<a href="home" class="active">Home</a>
+							
+						</li>
+						<li>
+							<a href="#0">Pages</a>
+							
+						</li>
+						<li>
+							<a href="{% url 'blog' %}">Blog</a>
+						
+						</li>
+						<li>
+							<a href="#0">Blog</a>
+							
+						</li>
+						<li>
+							<a href="#0">Shop</a>
+							
+						</li>
+						<li>
+							<a href="contact.html">Contact Us</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+	</div>
+	<!-- m obile menu area end -->
+
+	<!-- header start -->
+	<header class="d-none d-lg-block">
+		<div class="bg-white">
+			<div class="container-fluid">
+				<div class="header-item">
+					<div class="header-logo">
+						<a href="{% url 'home' %}"><img src="  {% static 'assets/images/logo/logo.png' %}  " alt="logo"></a>
+					</div>
+					<div class="header-menu">
+							<nav class="primary-menu">
+								<div class="main-menu-area">
+									<ul class="main-menu">
+										<li>
+											<a href="{% url 'home' %}">Home</a>
+											
+										</li>
+										
+											{% if request.user.is_authenticated %}
+										<li>
+											<a href="#">Blogging📝</a>
+										<ul class="submenu">
+												<li>
+													<a href="{% url 'blog' %}">Blogs</a>
+												</li>
+												<li>
+													<a href="{% url 'create-blog' %}">Create Post</a>
+												</li>
+												<li>
+													<a href="blog-single.html">Blog Single</a>
+												</li>
+											</ul>
+											{% endif %}
+											
+										</li>
+										<li>
+											<a href="#">Blog</a>
+											<ul class="submenu">
+												<li>
+													<a href="blog-left-sidebar.html">blog Sidebar Left</a>
+												</li>
+												<li>
+													<a href="blog-right-sidebar.html">blog Sidebar Right</a>
+												</li>
+												<li>
+													<a href="blog-single.html">Blog Single</a>
+												</li>
+											</ul>
+										</li>
+									
+										<li>
+											{% if request.user.is_authenticated %}
+											<a href="contact.html">Auths🔐</a>
+												<ul class="submenu">
+
+												<li>
+														<a href="{% url 'users-logout' %}">LogOut</a>
+												</li>
+												<li>
+														<a href="{% url 'account' %}">Profile</a>
+												</li>
+												<li>
+														<a href="blog-single.html">Blog Single</a>
+												</li>
+											</ul>
+											{% endif %}
+
+										</li>
+									</ul>
+								</div>
+							</nav>
+					</div>
+					{% if request.user.is_authenticated %}
+					<div class="herder-icon">
+						<ul class="search-cart">
+							<li class="cart">
+									<span> Welcome |--| {{request.user.username}}</span>
+							</li>
+							
+							<li class="search">
+								<a href="#0" class="cart-link">
+									<i class="fa fa-search"></i>
+								</a>
+							</li>
+							{% else %}
+							<li style="list-style: none;">
+								<a href="{% url 'users-login' %}">Login</a>
+							</li>
+							<li style="list-style: none;">
+								<a href="{% url 'users-sign-up' %}">Sign Up</a>
+							</li>
+						</ul>
+					</div>
+					{% endif %}
+				</div>
+			</div>
+		</div>
+	</header>
+	<!-- header end -->

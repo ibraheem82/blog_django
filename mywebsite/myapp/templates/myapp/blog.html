@@ -1,0 +1,190 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+	<!-- services area start -->
+	<div class="blogs">
+		<div class="container">
+			<div class="blog-wrapper">
+				<div class="row">
+				
+					<div class="col-lg-9 col-12 pr-lg-20">
+					{% for post in posts  %}
+						<div class="blog-post">
+							<div class="blog-thumb">
+								<a href="{% url 'detail' post.slug %}"><img src="{{post.image.url}} " alt="blog-image"></a>
+								<div class="date">
+									<h6>25</h6>
+									<span>Aug</span>
+
+								</div>
+								<div class="badge bg-dark bg-gradient text-white rounded-pill mb-5">
+							<strong>{{post.category}}</strong></div>
+
+
+							</div>
+							<div class="blog-text">
+								<ul class="post-date">
+								<span>
+								{% if post.writer.picture %}
+									<img src="{{post.writer.picture.url}}" class="rounded-circle float-left" style= "width:8%; height:8%;" alt="...">
+										{% else %}
+									<img src="" class="rounded float-left" alt="...">
+									{% endif %}
+									</span>
+								<li><span>{{post.created_at}}</span></li>
+								<li><span>By <a href="#">{{post.writer.name}}</a></span></li>
+								</ul>
+								<a href="{% url 'detail' post.slug %}"><h3>{{post.title}}</h3></a>
+								<p>{{post.body|truncatechars:200}}</p>
+								<ul class="more-art">
+									<li>
+									<a href="{% url 'detail' slug=post.slug %}">
+									<span>Read More<i class="fa fa-angle-double-right"></i>
+									</span>
+									</a>
+									</li>
+									<li>
+										<span><i class="far fa-comment"></i> <a href="#">3 Comment</a></span>
+										<span class="hart"><i class="far fa-heart"></i> <a href="#">Like</a></span>
+									</li>
+								</ul>
+							</div>
+						</div>
+				{% endfor %}
+
+						
+						<div class="anuther-page">
+							<ul class="page-linkup">
+								<li>
+									<a href="#">Prev</a>
+								</li>
+								<li>
+									<a href="#"><span>01</span></a>
+								</li>
+								<li>
+									<a href="#"><span>02</span></a>
+								</li>
+								<li>
+									<a href="#"><span>03</span></a>
+								</li>
+								<li>
+									<span>...</span>
+								</li>
+								<li>
+									<a href="#"><span>23</span></a>
+								</li>
+								<li>
+									<a href="#"><span>24</span></a>
+								</li>
+								<li>
+									<a href="#"><span>25</span></a>
+								</li>
+								<li>
+									<a href="#">Next</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div class="col-lg-3 col-12">
+						{% comment %} <div class="widget-member">
+							<div class="member-thumb">
+								<a href="blog_single.html"><img src="assets/images/blog/04.png" alt="blog-imge"></a>
+							</div>
+							<div class="member-text">
+								<a href="#"><h5>Sahjahan Sagor</h5></a>
+								<p>Authoritatively restore orthog ips ineer installed Intrinsiclyts imperatives.</p>
+								<ul class="team-icon">
+									<li><a href="#"><i class="fab fa-twitter"></i></a></li>
+									<li><a href="#"><i class="fab fa-behance"></i></a></li>
+									<li><a href="#"><i class="fab fa-instagram"></i></a></li>
+									<li><a href="#"><i class="fab fa-vimeo-v"></i></a></li>
+									<li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+								</ul>
+							</div>
+						</div> {% endcomment %}
+
+						<div class="Post-Categories">
+							<h5>Post  Categories</h5>
+							<ul class="categories">
+								<li><a href="#"><p>Show all</p><span>(50)</span></a></li>
+								<li><a href="#"><p>Business </p><span>(20)</span></a></li>
+								<li><a href="#"><p>Creative</p><span>(25)</span></a></li>
+								<li><a href="#"><p>Inspiation</p><span>(28)</span></a></li>
+								<li><a href="#"><p>News</p><span>(28)</span></a></li>
+								<li><a href="#"><p>Photography</p><span>(20)</span></a></li>
+								<li><a href="#"><p>Smart</p><span>(25)</span></a></li>
+							</ul>
+						</div>
+
+						{% comment %} <div class="recent-post">
+							<div class="post-content">
+								<h5>Recent Post</h5>
+								<div class="content-inner" >
+									<div class="post-thumb">
+										<a href="#"><img src="assets/images/blog/05.png" alt="Blog-image"></a>
+									</div>
+									<div class="post-text">
+										<a href="#">Conveniently utilize premier metho.</a>
+										<span>January 26, 2020</span>
+									</div>
+								</div>
+								<div class="content-inner">
+									<div class="post-thumb">
+										<a href="#"><img src=" {% static 'assets/images/blog/06.png' %} " alt="Blog-image"></a>
+									</div>
+									<div class="post-text">
+										<a href="#">Seamlessly fashion customiz before.</a>
+										<span>January 26, 2020</span>
+									</div>
+								</div>
+								<div class="content-inner">
+									<div class="post-thumb">
+										<a href="#"><img src=" {% static 'assets/images/blog/07.png' %} " alt="Blog-image"></a>
+									</div>
+									<div class="post-text">
+										<a href="#">Conveniently utilize premier metho.</a>
+										<span>January 26, 2020</span>
+									</div>
+								</div>
+								<div class="content-inner">
+									<div class="post-thumb">
+										<a href="#"><img src=" {% static 'assets/images/blog/08.png' %} " alt="Blog-image"></a>
+									</div>
+									<div class="post-text">
+										<a href="#">Seamlessly fashion customiz before.</a>
+										<span>January 26, 2020</span>
+									</div>
+								</div>
+							</div>
+						</div> {% endcomment %}
+
+						{% comment %} <div class="widget-instagram">
+							<h5>Instagram</h5>
+							<ul class="instagram-thumb">
+								<li><a href="#"><img src=" {% static 'assets/images/blog/09.png' %} " alt="blog-imge"></a></li>
+								<li><a href="#"><img src=" {% static 'assets/images/blog/10.png' %} " alt="blog-imge"></a></li>
+								<li><a href="#"><img src=" {% static 'assets/images/blog/11.png' %} " alt="blog-imge"></a></li>
+								<li><a href="#"><img src=" {% static 'assets/images/blog/12.png' %} " alt="blog-imge"></a></li>
+							</ul>
+						</div> {% endcomment %}
+						
+						<div class="widget-tag">
+							<h5>Reatured Tags</h5>
+							<ul>
+								<li><a href="#">Art</a></li>
+								<li><a href="#">Design</a></li>
+								<li><a href="#">Photo</a></li>
+								<li><a href="#">Web Design</a></li>
+								<li><a href="#">fashion</a></li>
+								<li><a href="#">Aillustrator</a></li>
+								<li><a href="#">Ux</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- sercices area ends -->
+    {% endblock %}

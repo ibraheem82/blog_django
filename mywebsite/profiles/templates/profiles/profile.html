@@ -1,0 +1,113 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+{% block content %}
+<!-- services area start -->
+	<div class="blogs">
+		<div class="container">
+			<div class="blog-wrapper">
+				<div class="row flex-row-reverse">
+					<div class="col-lg-9 col-12 pl-lg-20">
+                    {% for profile_post in profile.post_set.all %}
+                    
+						<div class="blog-post">
+							<div class="blog-thumb">
+								<a href=""><img src=" {{profile_post.image.url}} " alt="blog-imge"></a>
+								<div class="date">
+									<h6>25</h6>
+									<span>Aug</span>
+								</div>
+							</div>
+							<div class="blog-text">
+								<ul class="post-date">
+									<li><span>October 9, 2019 10:59 am </span></li>
+									<li><span>By <a href="#">Sahjahan Sagor</a></span></li>
+								</ul>
+								<a href=""><h3>{{profile_post.title}}</h3></a>
+								<p>{{profile_post.body|truncatechars:100}}</p>
+								<ul class="more-art">
+									<li><a href="{% url 'detail' profile_post.slug %}"><span>Read More<i class="fa fa-angle-double-right"></i></span></a></li>
+									<li>
+										<span><i class="far fa-comment"></i> <a href="#">3 Comment</a></span>
+										<span class="hart"><i class="far fa-heart"></i> <a href="#">Like</a></span>
+									</li>
+								</ul>
+							</div>
+						</div>
+                    {% endfor %}
+
+						
+						<div class="anuther-page">
+							<ul class="page-linkup">
+								<li>
+									<a href="#">Prev</a>
+								</li>
+								<li>
+									<a href="#"><span>01</span></a>
+								</li>
+								<li>
+									<a href="#"><span>02</span></a>
+								</li>
+								<li>
+									<a href="#"><span>03</span></a>
+								</li>
+								<li>
+									<span>...</span>
+								</li>
+								<li>
+									<a href="#"><span>23</span></a>
+								</li>
+								<li>
+									<a href="#"><span>24</span></a>
+								</li>
+								<li>
+									<a href="#"><span>25</span></a>
+								</li>
+								<li>
+									<a href="#">Next</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div class="col-lg-3 col-12">
+						<div class="widget-member">
+							<div class="member-thumb">
+								<a href="#"><img src=" {{profile.picture.url}} " alt="blog-imge"></a>
+							</div>
+							<div class="member-text">
+								<a href="#"><h3>{{profile.name}}</h3></a>
+                                <h6>{{profile.profession}}</h6>
+								<p>{{profile.about}}</p>
+								<ul class="team-icon">
+									<li><a href="#"><i class="fab fa-twitter"></i></a></li>
+									<li><a href="#"><i class="fab fa-behance"></i></a></li>
+									<li><a href="#"><i class="fab fa-instagram"></i></a></li>
+									<li><a href="#"><i class="fab fa-vimeo-v"></i></a></li>
+									<li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+								</ul>
+							</div>
+						</div>
+
+	
+
+						<div class="widget-instagram">
+							<h5>Instagram</h5>
+							<ul class="instagram-thumb">
+								<li><a href="#"><img src=" {% static 'assets/images/blog/09.png' %} " alt="blog-imge"></a></li>
+								<li><a href="#"><img src=" {% static 'assets/images/blog/10.png' %} " alt="blog-imge"></a></li>
+								<li><a href="#"><img src=" {% static 'assets/images/blog/11.png' %} " alt="blog-imge"></a></li>
+								<li><a href="#"><img src=" {% static 'assets/images/blog/12.png' %} " alt="blog-imge"></a></li>
+							</ul>
+						</div>
+						
+					
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- sercices area ends -->
+	
+
+{% endblock content %}
