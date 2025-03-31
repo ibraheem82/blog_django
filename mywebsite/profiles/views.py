@@ -1,6 +1,6 @@
 # from email import message
 # import re
-from turtle import update
+# from turtle import update
 from django.shortcuts import redirect, render
 # Create your views here.
 from .models import UserProfile

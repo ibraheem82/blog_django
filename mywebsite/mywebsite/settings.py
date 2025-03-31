@@ -11,7 +11,6 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
 from pathlib import Path
-from tkinter.tix import IMAGE
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -48,6 +47,7 @@ INSTALLED_APPS = [
     # Import ckeditor in your model
     'ckeditor',
     'crispy_forms',
+    'crispy_bootstrap4',
     'authentication',
     
 ]
@@ -129,6 +129,7 @@ USE_TZ = True
 
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
+# CRISPY_TEMPLATE_PACK = 'uni_form'
 
 
 # Static files (CSS, JavaScript, Images)

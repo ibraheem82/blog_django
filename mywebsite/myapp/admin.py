@@ -1,4 +1,4 @@
-from turtle import title
+# from turtle import title
 from django.contrib import admin
 from .models import Post, Category
 # Register your models here.
